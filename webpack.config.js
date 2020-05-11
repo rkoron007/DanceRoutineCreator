@@ -2,10 +2,10 @@
 var path = require("path");
 
 module.exports = {
-  entry: "./frontend/entry.jsx",
+  entry: "./client/entry.js",
   output: {
     path: path.join(__dirname, "app/assets/javascripts"),
-    filename: "bundle.js"
+    filename: "bundle.js",
   },
   module: {
     rules: [
@@ -15,14 +15,14 @@ module.exports = {
         use: {
           loader: "babel-loader",
           query: {
-            presets: ["@babel/env", "@babel/react"]
-          }
-        }
-      }
-    ]
+            presets: ["@babel/env", "@babel/react"],
+          },
+        },
+      },
+    ],
   },
   devtool: "source-map",
   resolve: {
-    extensions: [".js", ".jsx", "*"]
-  }
+    extensions: [".js", ".jsx", "*"],
+  },
 };
