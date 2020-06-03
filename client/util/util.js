@@ -4,6 +4,7 @@ import React from "react";
 export const handleResponseJSON = (response) => {
   if (response.status >= 201) {
     return response.json().then((message) => {
+      debugger;
       throw new Error(message);
     });
   }
